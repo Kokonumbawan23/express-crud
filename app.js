@@ -5,7 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors');
 
-const userRouter = require('./app/user/route');
+const userRoute = require('./app/user/route');
+const certificateRoute = require('./app/certificate/route');
 
 var app = express();
 require('dotenv').config();
@@ -20,7 +21,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
-app.use('/user', userRouter);
+app.use('/user', userRoute);
+app.use('/certificate', certificateRoute);
 
 
 
