@@ -1,0 +1,23 @@
+----Table User----
+ID_User (primary key)
+username
+password
+email
+phone_number
+divisi
+jabatan
+periode
+role
+created_at
+updated_at
+
+----Table Certificate----
+ID_Certificate (primary key)
+certificate_name
+certificate_publisher
+certificate_description
+valid_until
+ID_User(foreign key)
+
+username tidak boleh berubah, username dan pass diberikan oleh admin
+pahami userflow
