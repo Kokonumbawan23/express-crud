@@ -6,4 +6,5 @@ const { getUserCertificate } = require('./handler')
 router.get("/:id", getUserCertificate);
 
 
+
 module.exports = router;

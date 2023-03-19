@@ -8,6 +8,9 @@ const cors = require('cors');
 const userRoute = require('./app/user/route');
 const certificateRoute = require('./app/certificate/route');
 
+const Handler404NotFound = require('./middleware/Handler404');
+const CustomErrorHandler = require('./middleware/CustomErrorHandler');
+
 var app = express();
 require('dotenv').config();
 // view engine setup
@@ -21,10 +24,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
+
+// Routing
 app.use('/user', userRoute);
 app.use('/certificate', certificateRoute);
 
-
+app.use(Handler404NotFound);
+app.use(CustomErrorHandler);
 
 
 module.exports = app;
