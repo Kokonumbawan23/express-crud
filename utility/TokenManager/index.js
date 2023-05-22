@@ -9,6 +9,14 @@ function generateAccessToken(userPayload) {
   });
 }
 
+function deactivateAccessToken(userPayload){
+  return jwt.sign(userPayload, "deactivated123", {
+    subject: userPayload.name,
+    expiresIn: "1s",
+  })
+}
+
 module.exports = {
   generateAccessToken,
+  deactivateAccessToken
 };

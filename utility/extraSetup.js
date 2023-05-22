@@ -1,5 +1,5 @@
 function applyExtraSetup(sequelize) {
-    const { User, Role, Certificate } = sequelize.models;
+    const { User, Role, Certificate, Image } = sequelize.models;
   
     Role.hasMany(User, {
       foreignKey: "id_role",
@@ -19,6 +19,16 @@ function applyExtraSetup(sequelize) {
     Certificate.belongsTo(User, {
       foreignKey: "id_user",
       targetKey: "id",
+    });
+
+    User.hasOne(Image, {
+      foreignKey: "image_id",
+      targetKey: "id" 
+    })
+
+    Image.belongsTo(User,{
+      foreignKey: "user_id",
+      targetKey: "id"
     });
   
   }

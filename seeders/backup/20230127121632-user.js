@@ -1,6 +1,5 @@
 // import getDataXlsx from "../utils/readFromXlsx";
 const getDataXlsx = require('../utils/readFromXlsx') 
-
 /** @type {import('sequelize-cli').Migration} */
 
 async function generateUser(){
@@ -9,6 +8,13 @@ async function generateUser(){
     d.password = Math.floor(1000 + Math.random() * 9000);
     d.periode = "2023";
     d.id_role = 1;
+    d.image_id = 0;
+    d.createdAt = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    d.updatedAt = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
+    if(!d.jabatan){
+      d.jabatan = "member";
+    }
   });
 
   return data;
