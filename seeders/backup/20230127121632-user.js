@@ -22,10 +22,10 @@ async function generateUser(){
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.bulkInsert("users", await generateUser());
+    await queryInterface.bulkInsert("Users", await generateUser());
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('users', null, {});
+    await queryInterface.bulkDelete('Users', null, {});
   }
 };
