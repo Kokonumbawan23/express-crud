@@ -8,16 +8,16 @@
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "itc_certificate",
-    "host": "127.0.0.1",
+    "password": "root",
+    "database": "tpm",
+    "host": "34.143.143.103",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": null,
-    "database": "itc_certificate",
-    "host": "127.0.0.1",
+    "password": "root",
+    "database": "tpm",
+    "host": "34.143.143.103",
     "dialect": "mysql"
   }
 }
